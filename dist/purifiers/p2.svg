@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#082f49"/><stop offset="100%" stop-color="#155e75"/></linearGradient></defs>
+  <rect width="900" height="600" fill="url(#g)"/>
+  <rect x="260" y="90" width="380" height="420" rx="30" fill="#f8fafc"/>
+  <rect x="300" y="140" width="300" height="50" rx="12" fill="#38bdf8"/>
+  <rect x="320" y="230" width="260" height="210" rx="20" fill="#e2e8f0"/>
+  <circle cx="370" cy="330" r="35" fill="#7dd3fc"/>
+  <rect x="440" y="290" width="110" height="80" rx="12" fill="#bae6fd"/>
+  <text x="450" y="545" font-size="40" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif">AquaPure Smart TDS</text>
+</svg>
