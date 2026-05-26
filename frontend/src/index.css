@@ -34,6 +34,7 @@ body {
   z-index: 0;
   perspective: 1200px;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .water-caustics {
@@ -54,7 +55,7 @@ body {
   height: 220px;
   border-radius: 45%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(125, 211, 252, 0.07));
-  filter: blur(0.4px);
+  filter: blur(0.15px);
   transform-origin: center;
 }
 
@@ -80,7 +81,7 @@ body {
   left: -12%;
   width: 124%;
   border-radius: 100%;
-  filter: blur(1px);
+  filter: blur(0.25px);
   transform-origin: center;
 }
 
@@ -118,7 +119,7 @@ body {
   height: 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.65);
-  box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.45), 0 6px 18px rgba(56, 189, 248, 0.3);
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.42), 0 4px 10px rgba(56, 189, 248, 0.2);
   animation: bubbleRise linear infinite;
 }
 
@@ -134,6 +135,12 @@ body {
 .content-shell {
   position: relative;
   z-index: 2;
+}
+
+.content-shell > section,
+.content-shell > footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 .liquid-text {
@@ -153,8 +160,8 @@ body {
   position: relative;
   border: 1px solid rgba(186, 230, 253, 0.95);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(240, 249, 255, 0.92));
-  backdrop-filter: blur(18px) saturate(140%);
-  box-shadow: 0 16px 38px rgba(14, 116, 144, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px) saturate(115%);
+  box-shadow: 0 10px 22px rgba(14, 116, 144, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.98);
   transform-style: preserve-3d;
   transition: transform 0.45s ease, box-shadow 0.45s ease;
   overflow: hidden;
@@ -192,7 +199,7 @@ body {
 }
 
 .glass-card:hover {
-  box-shadow: 0 24px 56px rgba(14, 116, 144, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
+  box-shadow: 0 14px 30px rgba(14, 116, 144, 0.13), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .input {

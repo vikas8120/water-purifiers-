@@ -33,6 +33,9 @@ export default function ProductCard({ product, onView }) {
       <img
         src={candidates[imageIndex] || product.image}
         alt={product.name}
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
         onError={() => {
           if (imageIndex < candidates.length - 1) {
             setImageIndex((prev) => prev + 1);
