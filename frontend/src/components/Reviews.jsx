@@ -3,7 +3,7 @@
 export default function Reviews({ reviews }) {
   return (
     <section id="reviews" className="mx-auto max-w-[90rem] px-3 py-20 md:px-5">
-      <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 liquid-text md:text-5xl">Loved In Homes Across India</h2>
+      <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 liquid-text sm:text-3xl md:text-5xl">Loved In Homes Across India</h2>
       <div className="mt-8 grid gap-5 md:grid-cols-3">
         {reviews.map((review) => (
           <div key={review.id} className="glass-card rounded-3xl p-6">

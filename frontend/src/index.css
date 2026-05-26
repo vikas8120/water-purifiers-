@@ -282,3 +282,36 @@ body {
   50% { transform: translate3d(2%, -2%, 0) scale(1.04); }
   100% { transform: translate3d(-2%, 0, 0) scale(1); }
 }
+
+@media (max-width: 768px) {
+  .water-caustics {
+    opacity: 0.1;
+  }
+
+  .wave-layer,
+  .water-surface {
+    opacity: 0.4;
+    filter: blur(0.2px);
+  }
+
+  .bubble-field span:nth-child(7),
+  .bubble-field span:nth-child(8) {
+    display: none;
+  }
+
+  .glass-card {
+    backdrop-filter: blur(12px) saturate(120%);
+    box-shadow: 0 10px 24px rgba(14, 116, 144, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  }
+
+  .glass-card::after {
+    opacity: 0.25;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .glass-card,
+  .glass-card:hover {
+    transform: none !important;
+  }
+}

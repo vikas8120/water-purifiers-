@@ -26,7 +26,7 @@ export default function ProductCard({ product, onView }) {
 
   return (
     <motion.div
-      whileHover={{ y: -10, rotateX: 3, rotateY: -3 }}
+      whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
       transition={{ type: "spring", stiffness: 170, damping: 16 }}
       className="glass-card group overflow-hidden rounded-3xl p-4"
     >
@@ -38,15 +38,15 @@ export default function ProductCard({ product, onView }) {
             setImageIndex((prev) => prev + 1);
           }
         }}
-        className="h-48 w-full rounded-2xl bg-white object-contain p-2 transition duration-500 group-hover:scale-105"
+        className="h-44 w-full rounded-2xl bg-white object-contain p-2 transition duration-500 group-hover:scale-105 sm:h-48"
       />
-      <h3 className="mt-4 text-lg font-bold text-slate-900">{product.name}</h3>
+      <h3 className="mt-3 text-base font-bold text-slate-900 sm:mt-4 sm:text-lg">{product.name}</h3>
       <div className="mt-2 flex items-center gap-2 text-sky-600">
         <Star size={16} fill="currentColor" />
         <span>{product.rating}</span>
       </div>
       <div className="mt-2 flex items-center gap-3">
-        <p className="flex items-center text-xl font-bold text-slate-900">
+        <p className="flex items-center text-lg font-bold text-slate-900 sm:text-xl">
           <IndianRupee size={16} />
           {product.price.toLocaleString("en-IN")}
         </p>

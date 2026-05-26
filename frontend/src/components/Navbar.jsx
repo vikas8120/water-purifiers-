@@ -11,8 +11,8 @@ export default function Navbar({ mobileOpen, setMobileOpen }) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-sky-100/80 bg-white/70 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-[90rem] items-center justify-between px-3 py-3 md:px-5">
-        <button onClick={() => goTo("home")} className="liquid-text text-xl font-extrabold tracking-wide">
+      <nav className="mx-auto flex max-w-[90rem] items-center justify-between px-3 py-2.5 md:px-5 md:py-3">
+        <button onClick={() => goTo("home")} className="liquid-text text-lg font-extrabold tracking-wide sm:text-xl">
           AquaPure <span className="text-sky-600">Elite</span>
         </button>
 
