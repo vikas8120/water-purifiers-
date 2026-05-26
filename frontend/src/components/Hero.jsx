@@ -17,9 +17,9 @@ export default function Hero() {
         initial={{ scale: 1.08, x: -20, y: 0 }}
         animate={{ scale: [1.08, 1.13, 1.08], x: [-20, 20, -20], y: [0, -10, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 h-full w-full object-cover will-change-transform"
+        className="absolute inset-0 h-full w-full object-cover will-change-transform [image-rendering:auto]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f8fbffe6] via-[#f8fbffba] to-[#f8fbff66]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f8fbffb8] via-[#f8fbff80] to-[#f8fbff40]" />
       <div className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-sky-300/30 blur-3xl" />
       <div className="absolute -right-20 bottom-8 h-72 w-72 rounded-full bg-blue-300/25 blur-3xl" />
 
