@@ -8,7 +8,7 @@
 }
 
 * {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -132,15 +132,13 @@ body {
 .bubble-field span:nth-child(7) { left: 78%; animation-duration: 21s; animation-delay: 5s; width: 18px; height: 18px; }
 .bubble-field span:nth-child(8) { left: 90%; animation-duration: 17s; animation-delay: 2s; }
 
+.bubble-field span:nth-child(n+5) {
+  display: none;
+}
+
 .content-shell {
   position: relative;
   z-index: 2;
-}
-
-.content-shell > section,
-.content-shell > footer {
-  content-visibility: auto;
-  contain-intrinsic-size: 900px;
 }
 
 .liquid-text {
@@ -187,7 +185,7 @@ body {
   height: 320%;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
   transform: rotate(18deg);
-  animation: cardShine 6.8s ease-in-out infinite;
+  animation: none;
   opacity: 0.45;
   z-index: 1;
   pointer-events: none;
@@ -252,8 +250,8 @@ body {
 }
 
 @keyframes tideShift {
-  0%, 100% { transform: translateX(-3%) translateY(0) scale(1); }
-  50% { transform: translateX(3%) translateY(-18px) scale(1.05); }
+  0%, 100% { transform: translateX(-2%) translateY(0) scale(1); }
+  50% { transform: translateX(2%) translateY(-10px) scale(1.03); }
 }
 
 @keyframes bubbleRise {
@@ -280,8 +278,8 @@ body {
 }
 
 @keyframes surfaceFlow {
-  0%, 100% { transform: translate3d(-3%, 0, 0) rotateX(62deg) rotateZ(-2deg) scale(1); }
-  50% { transform: translate3d(3%, -14px, 35px) rotateX(67deg) rotateZ(2deg) scale(1.05); }
+  0%, 100% { transform: translate3d(-2%, 0, 0) rotateX(62deg) rotateZ(-1deg) scale(1); }
+  50% { transform: translate3d(2%, -7px, 20px) rotateX(65deg) rotateZ(1deg) scale(1.03); }
 }
 
 @keyframes causticDrift {

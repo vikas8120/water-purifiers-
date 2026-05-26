@@ -38,13 +38,9 @@ export default function App() {
       <div className="water-depth">
         <div className="water-caustics" />
         <div className="water-surface top" />
-        <div className="water-surface mid" />
-        <div className="water-surface low" />
         <div className="wave-layer one" />
-        <div className="wave-layer two" />
-        <div className="wave-layer three" />
         <div className="bubble-field">
-          <span /><span /><span /><span /><span /><span /><span /><span />
+          <span /><span /><span /><span />
         </div>
       </div>
 
