@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Star, X } from "lucide-react";
 
 const imageCandidates = (imagePath) => {
@@ -20,10 +20,17 @@ const imageCandidates = (imagePath) => {
 };
 
 export default function ProductModal({ product, open, onClose }) {
+  const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (!open) {
+      setImageIndex(0);
+    }
+  }, [open]);
+
   if (!open || !product) return null;
 
   const candidates = [...imageCandidates(product.image), ...(product.fallbackImage ? [product.fallbackImage] : [])];
-  const [imageIndex, setImageIndex] = useState(0);
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4" onClick={onClose}>
@@ -51,7 +58,7 @@ export default function ProductModal({ product, open, onClose }) {
           <Star size={16} fill="currentColor" />
           <span>{product.rating}</span>
         </div>
-        <p className="mt-2 text-xl font-semibold text-white">?{product.price.toLocaleString("en-IN")}</p>
+        <p className="mt-2 text-xl font-semibold text-white">₹{product.price.toLocaleString("en-IN")}</p>
         <p className="mt-2 text-slate-300">Purification Type: {product.purificationType}</p>
         <p className="mt-1 text-slate-300">Warranty: {product.warranty}</p>
         <ul className="mt-3 space-y-1 text-slate-200">
@@ -63,5 +70,3 @@ export default function ProductModal({ product, open, onClose }) {
     </div>
   );
 }
-
-

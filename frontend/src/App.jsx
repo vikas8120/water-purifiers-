@@ -1,15 +1,26 @@
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Products from "./components/Products";
-import ProductModal from "./components/ProductModal";
-import Technology from "./components/Technology";
-import Benefits from "./components/Benefits";
-import Reviews from "./components/Reviews";
-import DemoForm from "./components/DemoForm";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import FloatingContentWrapper from "./components/FloatingContentWrapper";
 import { filters, products, reviews } from "./data/products";
+
+const AnimatedWaterBackground = lazy(() => import("./components/AnimatedWaterBackground"));
+const Products = lazy(() => import("./components/Products"));
+const ProductModal = lazy(() => import("./components/ProductModal"));
+const Technology = lazy(() => import("./components/Technology"));
+const Benefits = lazy(() => import("./components/Benefits"));
+const Reviews = lazy(() => import("./components/Reviews"));
+const DemoForm = lazy(() => import("./components/DemoForm"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
+
+function SectionPlaceholder({ className = "", minHeight = "min-h-64" }) {
+  return (
+    <div className="mx-auto max-w-[90rem] px-3 md:px-5">
+      <div className={`animate-pulse rounded-3xl border border-sky-100 bg-white/70 ${minHeight} ${className}`} />
+    </div>
+  );
+}
 
 export default function App() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -35,34 +46,59 @@ export default function App() {
 
   return (
     <div className="luxury-mesh min-h-screen">
-      <div className="water-depth">
-        <div className="water-caustics" />
-        <div className="water-surface top" />
-        <div className="wave-layer one" />
-        <div className="bubble-field">
-          <span /><span /><span /><span />
-        </div>
-      </div>
+      <Suspense fallback={null}>
+        <AnimatedWaterBackground />
+      </Suspense>
 
       <div className="content-shell">
         <Navbar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
-        <Hero />
-        <Products
-          products={filteredProducts}
-          activeFilter={activeFilter}
-          setActiveFilter={setActiveFilter}
-          filters={filters}
-          onView={setSelectedProduct}
-        />
-        <Technology />
-        <Benefits />
-        <Reviews reviews={reviews} />
-        <DemoForm onToast={setToast} />
-        <Contact onToast={setToast} />
-        <Footer />
+        <FloatingContentWrapper className="section-tone-1">
+          <Hero />
+        </FloatingContentWrapper>
+        <Suspense fallback={<FloatingContentWrapper className="section-tone-1"><SectionPlaceholder minHeight="min-h-[34rem]" /></FloatingContentWrapper>}>
+          <FloatingContentWrapper className="section-tone-2">
+            <Products
+              products={filteredProducts}
+              activeFilter={activeFilter}
+              setActiveFilter={setActiveFilter}
+              filters={filters}
+              onView={setSelectedProduct}
+            />
+          </FloatingContentWrapper>
+        </Suspense>
+        <Suspense fallback={<FloatingContentWrapper className="section-tone-2"><SectionPlaceholder minHeight="min-h-80" /></FloatingContentWrapper>}>
+          <FloatingContentWrapper className="section-tone-3">
+            <Technology />
+          </FloatingContentWrapper>
+        </Suspense>
+        <Suspense fallback={<FloatingContentWrapper className="section-tone-3"><SectionPlaceholder minHeight="min-h-80" /></FloatingContentWrapper>}>
+          <FloatingContentWrapper className="section-tone-4">
+            <Benefits />
+          </FloatingContentWrapper>
+        </Suspense>
+        <Suspense fallback={<FloatingContentWrapper className="section-tone-4"><SectionPlaceholder minHeight="min-h-72" /></FloatingContentWrapper>}>
+          <FloatingContentWrapper className="section-tone-1">
+            <Reviews reviews={reviews} />
+          </FloatingContentWrapper>
+        </Suspense>
+        <Suspense fallback={<FloatingContentWrapper className="section-tone-1"><SectionPlaceholder minHeight="min-h-72" /></FloatingContentWrapper>}>
+          <FloatingContentWrapper className="section-tone-2">
+            <DemoForm onToast={setToast} />
+          </FloatingContentWrapper>
+        </Suspense>
+        <Suspense fallback={<FloatingContentWrapper className="section-tone-2"><SectionPlaceholder minHeight="min-h-64" /></FloatingContentWrapper>}>
+          <FloatingContentWrapper className="section-tone-3">
+            <Contact onToast={setToast} />
+          </FloatingContentWrapper>
+        </Suspense>
+        <Suspense fallback={<SectionPlaceholder minHeight="min-h-32" />}>
+          <Footer />
+        </Suspense>
       </div>
 
-      <ProductModal open={Boolean(selectedProduct)} product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      <Suspense fallback={null}>
+        <ProductModal open={Boolean(selectedProduct)} product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      </Suspense>
 
       {toast && (
         <div className="fixed bottom-6 right-6 z-[60] rounded-xl bg-sky-500 px-4 py-2 text-sm font-medium text-white shadow-glow">

@@ -44,7 +44,7 @@ export default function ProductCard({ product, onView }) {
         className="h-44 w-full rounded-2xl bg-white object-contain p-2 transition duration-500 group-hover:scale-105 sm:h-48"
       />
       <h3 className="mt-3 text-base font-bold text-slate-900 sm:mt-4 sm:text-lg">{product.name}</h3>
-      <div className="mt-2 flex items-center gap-2 text-sky-600">
+      <div className="mt-2 flex items-center gap-2 text-[#5f738f]">
         <Star size={16} fill="currentColor" />
         <span>{product.rating}</span>
       </div>

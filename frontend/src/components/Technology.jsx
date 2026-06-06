@@ -27,14 +27,14 @@ export default function Technology() {
             transition={{ delay: idx * 0.05 }}
             className="glass-card group relative rounded-3xl p-4 text-center transition duration-300 hover:-translate-y-1 sm:p-5"
           >
-            <div className="mx-auto inline-flex rounded-xl bg-sky-50 p-2.5 ring-1 ring-sky-100">
-              <Icon className="text-sky-600" size={22} />
+            <div className="mx-auto inline-flex rounded-xl bg-[#f4f3f3] p-2.5 ring-1 ring-[#b1bed5]">
+              <Icon className="text-[#5f738f]" size={22} />
             </div>
             <p className="mt-3 text-base font-bold text-slate-900 sm:text-[1.06rem]">{label}</p>
             {idx < steps.length - 1 && (
               <ArrowRight
                 size={16}
-                className="absolute -right-2 top-1/2 hidden -translate-y-1/2 text-sky-500 lg:block"
+                className="absolute -right-2 top-1/2 hidden -translate-y-1/2 text-[#5f738f] lg:block"
               />
             )}
           </motion.div>

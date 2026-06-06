@@ -7,7 +7,7 @@ export default function Reviews({ reviews }) {
       <div className="mt-8 grid gap-5 md:grid-cols-3">
         {reviews.map((review) => (
           <div key={review.id} className="glass-card rounded-3xl p-6">
-            <div className="mb-3 flex text-sky-600">
+            <div className="mb-3 flex text-[#5f738f]">
               {Array.from({ length: review.rating }).map((_, idx) => (
                 <Star key={idx} size={16} fill="currentColor" />
               ))}

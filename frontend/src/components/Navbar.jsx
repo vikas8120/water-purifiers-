@@ -10,10 +10,10 @@ export default function Navbar({ mobileOpen, setMobileOpen }) {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-sky-100/80 bg-white/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#b1bed5]/70 bg-[#f4f3f3]/85 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-[90rem] items-center justify-between px-3 py-2.5 md:px-5 md:py-3">
         <button onClick={() => goTo("home")} className="liquid-text text-lg font-extrabold tracking-wide sm:text-xl">
-          AquaPure <span className="text-sky-600">Elite</span>
+          AquaPure <span className="text-[#5f738f]">Elite</span>
         </button>
 
         <div className="hidden items-center gap-6 md:flex">
@@ -21,7 +21,7 @@ export default function Navbar({ mobileOpen, setMobileOpen }) {
             <button
               key={item}
               onClick={() => goTo(item)}
-              className="text-sm font-medium text-slate-700 transition hover:text-sky-600"
+              className="text-sm font-medium text-slate-700 transition hover:text-[#5f738f]"
             >
               {item}
             </button>
@@ -30,7 +30,7 @@ export default function Navbar({ mobileOpen, setMobileOpen }) {
 
         <div className="flex items-center gap-3">
           <button
-            className="rounded-full border border-slate-300 bg-white p-2 text-slate-700 md:hidden"
+            className="rounded-full border border-[#b1bed5] bg-white p-2 text-slate-700 md:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -42,7 +42,7 @@ export default function Navbar({ mobileOpen, setMobileOpen }) {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="border-t border-slate-200 bg-white/95 px-4 py-4 md:hidden"
+          className="border-t border-[#b1bed5]/60 bg-[#f4f3f3]/96 px-4 py-4 md:hidden"
         >
           <div className="flex flex-col gap-3">
             {navLinks.map((item) => (

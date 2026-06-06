@@ -1,5 +1,5 @@
-﻿import { useState } from "react";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
+import { Globe, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 const initial = { name: "", email: "", message: "" };
 
@@ -17,17 +17,31 @@ export default function Contact({ onToast }) {
     <section id="contact" className="mx-auto max-w-[90rem] px-3 py-20 md:px-5">
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="glass-card rounded-3xl p-6">
-          <h2 className="text-3xl font-extrabold text-slate-900">Contact Us</h2>
+          <h2 className="text-3xl font-extrabold text-slate-900">Kriscel Tech Pvt. Ltd.</h2>
+          <p className="mt-2 text-sm font-medium text-slate-600">
+            Official contact details from the Kriscel Tech website.
+          </p>
           <div className="mt-5 space-y-3 text-slate-600">
-            <p className="flex items-center gap-2"><Phone size={16} /> +91 98765 43210</p>
-            <p className="flex items-center gap-2"><Mail size={16} /> support@aquapureelite.com</p>
-            <p className="flex items-center gap-2"><MapPin size={16} /> Connaught Place, New Delhi</p>
+            <p className="flex items-center gap-2"><Phone size={16} /> +91 8985419420</p>
+            <p className="flex items-center gap-2"><Mail size={16} /> Info@kriscel.com</p>
+            <p className="flex items-start gap-2">
+              <MapPin size={16} className="mt-0.5 shrink-0" />
+              <span>229, BHARTHAL, SECTOR - 26, DWARKA, South West Delhi, Delhi, 110077</span>
+            </p>
+            <a
+              href="https://kriscel.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-slate-800 transition hover:text-[#4f647f]"
+            >
+              <Globe size={16} /> kriscel.com
+            </a>
           </div>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/91985419420"
             target="_blank"
             rel="noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 font-medium text-white"
+            className="palette-primary mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium"
           >
             <MessageCircle size={16} /> WhatsApp
           </a>
@@ -47,7 +61,7 @@ export default function Contact({ onToast }) {
               placeholder="Your message"
               className="input resize-none"
             />
-            <button className="w-full rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 px-5 py-3 font-semibold text-white transition hover:from-sky-500 hover:to-blue-500">
+            <button className="palette-primary w-full rounded-xl px-5 py-3 font-semibold transition hover:brightness-105">
               Submit
             </button>
           </div>
@@ -56,5 +70,3 @@ export default function Contact({ onToast }) {
     </section>
   );
 }
-
-

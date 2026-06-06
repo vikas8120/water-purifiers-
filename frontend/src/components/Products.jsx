@@ -13,8 +13,8 @@ export default function Products({ products, activeFilter, setActiveFilter, filt
             onClick={() => setActiveFilter(filter)}
             className={`rounded-full px-3 py-1.5 text-xs transition sm:px-4 sm:py-2 sm:text-sm ${
               activeFilter === filter
-                ? "bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-[0_8px_22px_rgba(2,132,199,0.25)]"
-                : "border border-slate-200 bg-white/90 text-slate-700 hover:bg-slate-50"
+                ? "palette-primary shadow-[0_8px_22px_rgba(95,115,143,0.22)]"
+                : "palette-chip border hover:bg-white"
             }`}
           >
             {filter}

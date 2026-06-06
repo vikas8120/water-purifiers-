@@ -29,7 +29,7 @@ export default function DemoForm({ onToast }) {
             placeholder="Product Interest"
             className="input"
           />
-          <button className="rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 px-5 py-3 font-semibold text-white transition hover:from-sky-500 hover:to-blue-500 md:col-span-2">
+          <button className="palette-primary rounded-xl px-5 py-3 font-semibold transition hover:brightness-105 md:col-span-2">
             Reserve My Demo
           </button>
         </form>

@@ -19,8 +19,8 @@ export default function Benefits() {
             key={title}
             className="glass-card group rounded-3xl p-5 transition duration-300 hover:-translate-y-1 sm:p-6"
           >
-            <div className="inline-flex rounded-xl bg-sky-50 p-2.5 ring-1 ring-sky-100">
-              <Icon className="text-sky-600" size={22} />
+            <div className="inline-flex rounded-xl bg-[#f4f3f3] p-2.5 ring-1 ring-[#b1bed5]">
+              <Icon className="text-[#5f738f]" size={22} />
             </div>
             <h3 className="mt-4 text-[1.28rem] font-bold leading-tight text-slate-900 sm:text-[1.5rem]">{title}</h3>
             <p className="mt-2 text-[0.98rem] font-medium leading-relaxed text-slate-600 sm:text-[1.03rem]">
